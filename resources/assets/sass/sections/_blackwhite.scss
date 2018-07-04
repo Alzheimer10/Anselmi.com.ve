@@ -1,0 +1,101 @@
+body.black,
+body.black section.section.section-top:before,
+body.black .container_img:after,
+body.black section.section:before,
+body.black .skillbar-title,
+body.black .scroll-top-wrapper,
+body.black section.section.section-top .section_title,
+body.black section.section{
+	background: $color-secondary !important;
+	color: $color-primary;
+}
+body.black .line-drawing path{
+	stroke: $color-primary;
+}
+
+body.black .side,
+body.black section.section,
+body.black .btn-navbar,
+body.black .container_img:before,
+body.black .btn-one,
+body.black section.section.section-top:before{
+	border-color: $color-primary;
+}
+body.black .skillbar-bar,
+body.black .btn-navbar::before,body.black  .btn-navbar::after,
+body.black .effect-19 ~ .focus-border:before,body.black .effect-19 ~ .focus-border:after,
+body.black .effect-19 ~ .focus-border i:before,body.black .effect-19 ~ .focus-border i:after,
+body.black section.section:after{
+	background: $color-primary;
+}
+body.black .btn-one:hover{
+    background-color: $color-primary !important;
+    border-color: $color-secondary;
+    color: $color-secondary;
+}
+body.black .btn-one .insider{
+	background: $color-secondary!important;
+}
+
+body.black .side .top a:hover,body.black .side .bottom a:hover, body.black .list .skill{
+    background-color: $color-primary;
+    color: $color-secondary!important;
+}
+
+body.black .side .top a:hover .glyph-icon:before,body.black .side .bottom a:hover .glyph-icon:before,
+body.black .btn-navbar:focus,
+body.black .btn-navbar:hover{
+	color: $color-secondary!important;
+}
+
+body.black .effect-19 ~ label,
+body.black .skill-bar-percent,
+body.black input[type="text"],
+body.black .glyph-icon:before,
+body.black a{
+	color: $color-primary !important;
+}
+body.black .navbar-toggle{
+	border-color: white !important;
+}
+body.black .navbar-toggle .icon-bar{
+	background-color: white !important;
+}
+
+* body.black::-webkit-scrollbar-piece {
+	background: $color-primary !important;
+}
+* body.black::-webkit-scrollbar-thumb {
+  overflow: hidden;
+  background: $color-primary !important;
+}
+.off{
+	position: relative;
+}
+.off:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000000;
+    background: $color-secondary;
+}
+.on-span{
+	display: none;
+}
+.z-index-max{
+	position: fixed;
+	z-index: 100000000;
+	border-color: $color-primary !important;
+}
+.z-index-max .off-span{
+	display: none;
+}
+.z-index-max:focus,
+.z-index-max .on-span{
+	display: block !important;
+	background: $color-font-primary !important;
+	color: $color-primary !important;
+}

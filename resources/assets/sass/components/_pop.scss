@@ -1,0 +1,56 @@
+.pop{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 100000;
+	left: 0;
+	top: 0;
+	display: none;
+	background-color: rgba($color-primary,0.7);
+	overflow: hidden;
+	& 	.container_pop{
+		position: fixed;
+		padding: 10px 10px 40px 10px;
+		z-index: 1000000;
+		background-color: rgba($color-primary,0.7);
+		border: 2px dashed $color-font-primary;
+		border-color: $color-font-primary;
+	    left: 50%;
+	    top: 50%;
+		width: 30%;
+		min-height: 200px;
+		 transition: 0.4s ease-out;
+		 opacity: 0;
+	    /*@include transform(translate(-50%, -50%));*/
+		@media screen and (max-width: $screen-sm) {
+			width: 70%;
+		}
+		@media screen and (max-width: $screen-xs) {
+			width: 90%;
+		}
+		& .content_pop a.button_pop{
+			position: absolute;
+			bottom: 5px;
+		    left: 50%;
+		    @include transform(translateX(-50%));
+		}
+	}
+}
+.container_pop-visible{
+	@include transform( translate(-50%, -50%) scale(1) !important);
+	opacity: 1 !important;
+}
+ .zoomin {
+	@include transform( translate(-50%, -50%) scale(2));
+ }
+body.black{
+	.pop{
+		background-color: rgba($color-font-primary,0.7);
+		& .container_pop{
+			color: white !important;
+			border-color: white! important;
+			background-color: rgba($color-font-primary,0.7);
+		}
+	}
+}
+

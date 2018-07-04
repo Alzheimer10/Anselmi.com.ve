@@ -1,0 +1,64 @@
+$side-space: 40px;
+
+.col-side{
+  max-width: $side-space;
+  .side {
+    border-right: 1px dashed;
+    position: fixed;
+    width: $side-space;
+    .side__bottom{
+      max-width: $side-space;
+      position: fixed;
+      bottom: 0;
+      a{ 
+        padding: 5px;
+        display: block;
+        margin: auto;
+        line-height: 0;
+        text-align: center;
+        position: relative;
+        @include transition(all .3s ease-in-out);
+        /*
+        &::before{
+          content: "SIGUEME";
+          text-align: center;
+          vertical-align: -50%;
+          position: absolute;
+          z-index: 0;
+          width: 100px;
+          height: 40px;
+          background: #ff5722;
+          right: 100px;
+          top: -1px;
+          border: 1px dashed;
+          border-left: 0px;
+          @include transition(all .3s ease-in-out);
+        }
+        */
+        &:hover{
+          background-color: $color-hover;
+          border-style: inset;
+          border: 1px dashed;
+          /*border-right: none;*/
+          padding-top: 4px;
+          padding-bottom: 4px;
+          /*
+          &::before{
+            right: -100px;
+          }
+          */
+          i{
+            @include transition(all .3s ease-in-out);
+            color: $color-white;
+            transform: rotate(8deg);
+          }
+        }
+
+        i{
+          font-size: $side-space - 2*5px;
+          display: block;
+        }
+      }
+    }
+  }
+}
