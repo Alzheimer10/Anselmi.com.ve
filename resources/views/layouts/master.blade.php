@@ -29,6 +29,8 @@
         background-color: #333;
         color: #fff;
       }
+      .side:before,.side:after{ background-color: #fff !important; }
+      .side__object:before,.side__object:after{ background-color: #fff !important; }
       body.color a{ color: #fff; }
       body.color a:hover,
       body.color a:active{ color: #fff; }

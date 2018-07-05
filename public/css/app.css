@@ -9534,6 +9534,151 @@ input {
   width: 40px;
 }
 
+.col-side .side:before, .col-side .side:after {
+  content: "";
+  width: 8px;
+  height: 5px;
+  background-color: #333;
+  position: absolute;
+  right: -5px;
+  border-radius: 20px;
+  top: 10%;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.col-side .side:before {
+  -webkit-animation-name: example;
+          animation-name: example;
+}
+
+@-webkit-keyframes example {
+  from {
+    top: -1%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes example {
+  from {
+    top: -1%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.col-side .side:after {
+  -webkit-animation-name: example2;
+          animation-name: example2;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+}
+
+@-webkit-keyframes example2 {
+  from {
+    top: -1%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes example2 {
+  from {
+    top: -1%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.col-side .side:hover::before, .col-side .side:hover::after {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.col-side .side .side__object {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.col-side .side .side__object:before, .col-side .side .side__object:after {
+  content: "";
+  width: 8px;
+  height: 5px;
+  background-color: #333;
+  position: absolute;
+  right: -5px;
+  border-radius: 20px;
+  top: 10%;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.col-side .side .side__object:before {
+  -webkit-animation-name: example3;
+          animation-name: example3;
+  -webkit-animation-duration: 5.5s;
+          animation-duration: 5.5s;
+}
+
+@-webkit-keyframes example3 {
+  from {
+    top: -1%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes example3 {
+  from {
+    top: -1%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.col-side .side .side__object:after {
+  -webkit-animation-name: example4;
+          animation-name: example4;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+@-webkit-keyframes example4 {
+  from {
+    top: -1%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes example4 {
+  from {
+    top: -1%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.col-side .side .side__object:hover::before, .col-side .side .side__object:hover::after {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
 .col-side .side .side__bottom {
   max-width: 40px;
   position: fixed;
@@ -9549,23 +9694,6 @@ input {
   position: relative;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  /*
-        &::before{
-          content: "SIGUEME";
-          text-align: center;
-          vertical-align: -50%;
-          position: absolute;
-          z-index: 0;
-          width: 100px;
-          height: 40px;
-          background: #ff5722;
-          right: 100px;
-          top: -1px;
-          border: 1px dashed;
-          border-left: 0px;
-          @include transition(all .3s ease-in-out);
-        }
-        */
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -9575,21 +9703,39 @@ input {
   }
 }
 
-.col-side .side .side__bottom a:hover {
+.col-side .side .side__bottom a::before {
+  content: attr(social);
+  text-align: center;
+  position: relative;
+  z-index: 0;
+  right: -40px;
+  top: 17px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .col-side .side .side__bottom a::before {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.col-side .side .side__bottom a:focus, .col-side .side .side__bottom a:hover {
   background-color: #ff5722;
   border-style: inset;
   border: 1px dashed;
   /*border-right: none;*/
   padding-top: 4px;
   padding-bottom: 4px;
-  /*
-          &::before{
-            right: -100px;
-          }
-          */
 }
 
-.col-side .side .side__bottom a:hover i {
+.col-side .side .side__bottom a:focus::before, .col-side .side .side__bottom a:hover::before {
+  opacity: 1;
+}
+
+.col-side .side .side__bottom a:focus i, .col-side .side .side__bottom a:hover i {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   color: #fff;
@@ -9598,7 +9744,7 @@ input {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  .col-side .side .side__bottom a:hover i {
+  .col-side .side .side__bottom a:focus i, .col-side .side .side__bottom a:hover i {
     -webkit-transition: none;
     transition: none;
   }
