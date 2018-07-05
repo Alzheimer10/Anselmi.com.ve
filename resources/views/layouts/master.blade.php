@@ -26,13 +26,17 @@
 
     <style>
       body.color{
-        background-color: #333;
-        color: #fff;
+        background-color: #333 !important;
+        color: #fff !important;
       }
-      .side:before,.side:after,.side__object:before,.side__object:after{ background-color: #fff !important; }
-      body.color a{ color: #fff; }
-      body.color a:hover,
-      body.color a:active{ color: #fff; }
+      /*body.color .navbar-light .navbar-toggler{ border-color: #fff;}*/
+      body.color .ninja-btn span,body.color .ninja-btn span:before,body.color .ninja-btn span:after { background-color: #fff }
+      body.color .side:before,.side:after,.side__object:before,.side__object:after{ background-color: #fff !important; }
+      a{ color: #fff !important; }
+      a:hover,
+      a:active{ color: #fff !important; }
+      a.animated-button.animated-h::before{ background: #fff !important; }
+      a.animated-button.animated-h:hover{ color: #333 !important; }
     </style>
   </head>
 
@@ -43,7 +47,7 @@
         <div class="col col-side">
           @include('layouts.sections.sidebar')
         </div>
-        <div class="content col h-100">
+        <div class="col p-0">
           <!-- navbar -->
             @include('layouts.sections.navbar')
           <!-- content -->
@@ -60,8 +64,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
     @yield('scripts')
-
+  <script>
+$(".ninja-btn").click( function() {
+  $(this).toggleClass("active");
+});
+  </script>
   </body>
 </html>

@@ -1,0 +1,23 @@
+a.animated-button{
+	position: relative;
+	&.animated-h{
+        @include transition(all .2s ease-in-out);
+		&:before{
+        	@include transition(all .2s ease-in-out);
+			content:"";
+			position: absolute;
+			width: 0%;
+			height: 100%;
+			background: $color-black;
+			left: 0;
+			top: 0;
+			z-index: -1;
+		}
+		&:hover{
+			color: $color-white !important;
+			&:before{
+				width: 100%;
+			}
+		}
+	}
+}

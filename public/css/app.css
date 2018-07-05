@@ -9755,3 +9755,142 @@ input {
   font-size: 30px;
   display: block;
 }
+
+.navbar-light .navbar-toggler {
+  border-radius: 0px;
+  padding: 2px;
+  border: none;
+}
+
+button:focus {
+  border: none;
+  outline: 0px dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+}
+
+/* Ninja Button styles */
+.ninja-btn {
+  top: -7px;
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 44px;
+  height: 28.66666667px;
+  cursor: pointer;
+  padding: 0;
+  /* Ninja Button */
+}
+
+.ninja-btn span,
+.ninja-btn span:before,
+.ninja-btn span:after {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #333;
+  width: 44px;
+  height: 2px;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .ninja-btn span,
+  .ninja-btn span:before,
+  .ninja-btn span:after {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .ninja-btn span,
+  .ninja-btn span:before,
+  .ninja-btn span:after {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.ninja-btn span {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-top: 13.33333333px;
+}
+
+.ninja-btn span:before, .ninja-btn span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.ninja-btn span:before {
+  top: -13.33333333px;
+}
+
+.ninja-btn span:after {
+  top: 13.33333333px;
+}
+
+.ninja-btn.active span {
+  background-color: transparent;
+}
+
+.ninja-btn.active span:before, .ninja-btn.active span:after {
+  top: 0;
+}
+
+.ninja-btn.active span:before {
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.ninja-btn.active span:before .ninja-btn.active span:after {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+/* Ninja Button Active */
+a.animated-button {
+  position: relative;
+}
+
+a.animated-button.animated-h {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.animated-button.animated-h {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+a.animated-button.animated-h:before {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #333;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.animated-button.animated-h:before {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+a.animated-button.animated-h:hover {
+  color: #fff !important;
+}
+
+a.animated-button.animated-h:hover:before {
+  width: 100%;
+}
