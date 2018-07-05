@@ -9602,6 +9602,12 @@ input {
           animation-play-state: paused;
 }
 
+.col-side .side:hover > .side__object::before,
+.col-side .side:hover > .side__object::after {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
 .col-side .side .side__object {
   position: absolute;
   width: 100%;
@@ -9672,11 +9678,6 @@ input {
   to {
     top: 100%;
   }
-}
-
-.col-side .side .side__object:hover::before, .col-side .side .side__object:hover::after {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
 }
 
 .col-side .side .side__bottom {

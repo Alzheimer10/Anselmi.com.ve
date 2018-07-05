@@ -38,6 +38,10 @@ $side-space: 40px;
     &:hover::after{
       animation-play-state: paused;
     }
+    &:hover > .side__object::before,
+    &:hover > .side__object::after{
+      animation-play-state: paused;
+    }
     .side__object{
       position: absolute;
       width: 100%;
@@ -71,10 +75,6 @@ $side-space: 40px;
           from {top: -1%;}
           to {top: 100%;}
         }
-      }
-      &:hover::before,
-      &:hover::after{
-        animation-play-state: paused;
       }
     }
     .side__bottom{
