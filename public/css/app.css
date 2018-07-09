@@ -25,6 +25,107 @@
   border-right: 0 !important;
 }
 
+.bg-app {
+  background-color: #fff;
+}
+
+.bg-app-inv {
+  background-color: #333;
+}
+
+.bg-app::before,
+.bg-app::after {
+  background-color: #fff;
+}
+
+.bg-after::after,
+.bg-before::before,
+.bg-pseudo::after,
+.bg-pseudo::before {
+  background-color: #333;
+}
+
+.line-drawing path {
+  stroke: #333 !important;
+}
+
+.b-app {
+  border-color: #333;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.color-black {
+  color: #333 !important;
+}
+
+body.color,
+body.color .color {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+body.color .color-inv {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+
+body.color .animated-button.animated-h::before {
+  background: #fff !important;
+}
+
+body.color .animated-button.animated-h {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+body.color .animated-button.animated-h:hover {
+  color: #333 !important;
+}
+
+body.color a {
+  color: #fff !important;
+}
+
+body.color a:hover,
+body.color a:active {
+  color: #fff !important;
+}
+
+body.color .bg-app {
+  background-color: #333 !important;
+}
+
+body.color .bg-app-inv {
+  background-color: #fff !important;
+}
+
+body.color .bg-app::before,
+body.color .bg-app::after {
+  background-color: #333 !important;
+}
+
+body.color .bg-after::after,
+body.color .bg-before::before,
+body.color .bg-pseudo::after,
+body.color .bg-pseudo::before {
+  background-color: #fff !important;
+}
+
+body.color .line-drawing path {
+  stroke: #fff !important;
+}
+
+body.color .b-app {
+  border-color: #fff !important;
+}
+
+body.color .form-control {
+  color: #fff !important;
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9469,9 +9570,21 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 html {
-  font-size: 20px;
+  font-size: 18px;
   min-height: 100%;
   position: relative;
+}
+
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 259px) {
+  html {
+    font-size: 8px;
+  }
 }
 
 body {
@@ -9500,28 +9613,96 @@ body.color * {
   border-color: #333;
 }
 
+body > * {
+  border-color: #333;
+}
+
 p {
   margin: 0;
   /*@include transition(all 0.0s ease-in-out);*/
 }
 
 a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
   outline: none;
 }
 
 a:hover, a:focus {
   text-decoration: none;
-  color: #fff;
+  color: #333;
 }
 
 ul {
   list-style: none;
 }
 
-input {
+input,
+textarea {
+  border-color: #333;
   background: transparent;
+}
+
+section.section {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+section.section.section-border-1 {
+  border: 1px solid;
+}
+
+section.section.section-border::before, section.section.section-border::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1em;
+}
+
+section.section.section-border.section-border-2::before, section.section.section-border.section-border-2::after {
+  width: 80%;
+  height: 50%;
+}
+
+section.section.section-border::before {
+  top: 0;
+  left: 0;
+  border-top: 0.125em solid;
+  border-left: 0.125em solid;
+}
+
+section.section.section-border::after {
+  right: 0;
+  bottom: 0;
+  border-right: 0.125em solid;
+  border-bottom: 0.125em solid;
+}
+
+#contact .section_title {
+  position: absolute;
+  top: -2rem;
+  text-align: center;
+  width: 100%;
+  left: 0;
+}
+
+#contact .section_title h1 {
+  display: initial;
+  padding: 0px 11px;
+}
+
+#contact .form-control:focus,
+#contact .form-control:active,
+#contact .form-control:visited,
+#contact .form-control {
+  background-color: transparent !important;
+  border-radius: 0px;
+  color: #333;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #333;
 }
 
 .col-side {
@@ -9532,80 +9713,6 @@ input {
   border-right: 1px dashed;
   position: fixed;
   width: 40px;
-}
-
-.col-side .side:before, .col-side .side:after {
-  content: "";
-  width: 8px;
-  height: 5px;
-  background-color: #333;
-  position: absolute;
-  right: -5px;
-  border-radius: 20px;
-  top: 10%;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-.col-side .side:before {
-  -webkit-animation-name: example;
-          animation-name: example;
-}
-
-@-webkit-keyframes example {
-  from {
-    top: -1%;
-  }
-  to {
-    top: 100%;
-  }
-}
-
-@keyframes example {
-  from {
-    top: -1%;
-  }
-  to {
-    top: 100%;
-  }
-}
-
-.col-side .side:after {
-  -webkit-animation-name: example2;
-          animation-name: example2;
-  -webkit-animation-duration: 4.5s;
-          animation-duration: 4.5s;
-}
-
-@-webkit-keyframes example2 {
-  from {
-    top: -1%;
-  }
-  to {
-    top: 100%;
-  }
-}
-
-@keyframes example2 {
-  from {
-    top: -1%;
-  }
-  to {
-    top: 100%;
-  }
-}
-
-.col-side .side:hover::before, .col-side .side:hover::after {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-
-.col-side .side:hover > .side__object::before,
-.col-side .side:hover > .side__object::after {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
 }
 
 .col-side .side .side__object {
@@ -9619,65 +9726,84 @@ input {
   content: "";
   width: 8px;
   height: 5px;
-  background-color: #333;
   position: absolute;
   right: -5px;
   border-radius: 20px;
   top: 10%;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-.col-side .side .side__object:before {
-  -webkit-animation-name: example3;
-          animation-name: example3;
+  -webkit-animation-name: movecube;
+          animation-name: movecube;
   -webkit-animation-duration: 5.5s;
           animation-duration: 5.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-color: #333;
 }
 
-@-webkit-keyframes example3 {
+@-webkit-keyframes movecube {
   from {
     top: -1%;
   }
   to {
-    top: 100%;
+    top: 50%;
   }
 }
 
-@keyframes example3 {
+@keyframes movecube {
   from {
     top: -1%;
   }
   to {
-    top: 100%;
+    top: 50%;
   }
 }
 
-.col-side .side .side__object:after {
-  -webkit-animation-name: example4;
-          animation-name: example4;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+.col-side .side .side__object.inv:after, .col-side .side .side__object.inv:before {
+  -webkit-animation-name: movecubeInv;
+          animation-name: movecubeInv;
 }
 
-@-webkit-keyframes example4 {
+@-webkit-keyframes movecubeInv {
   from {
-    top: -1%;
+    top: 100%;
   }
   to {
-    top: 100%;
+    top: 50%;
   }
 }
 
-@keyframes example4 {
+@keyframes movecubeInv {
   from {
-    top: -1%;
-  }
-  to {
     top: 100%;
   }
+  to {
+    top: 50%;
+  }
+}
+
+.col-side .side .side__object.side__2:before {
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+}
+
+.col-side .side .side__object.side__2:after {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.col-side .side .side__object.side__3:before {
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.col-side .side .side__object.side__3:after {
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+}
+
+.col-side .side:hover > .side__object::before,
+.col-side .side:hover > .side__object::after {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
 .col-side .side .side__bottom {
@@ -9693,6 +9819,7 @@ input {
   line-height: 0;
   text-align: center;
   position: relative;
+  color: #333;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -9789,7 +9916,7 @@ button:focus {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #333;
-  width: 44px;
+  width: 30px;
   height: 2px;
 }
 
@@ -9825,11 +9952,11 @@ button:focus {
 }
 
 .ninja-btn span:before {
-  top: -13.33333333px;
+  top: -9.33333333px;
 }
 
 .ninja-btn span:after {
-  top: 13.33333333px;
+  top: 9.33333333px;
 }
 
 .ninja-btn.active span {
@@ -9851,23 +9978,89 @@ button:focus {
 }
 
 /* Ninja Button Active */
-a.animated-button {
+.container_img {
   position: relative;
+  overflow: hidden;
+  z-index: 10;
 }
 
-a.animated-button.animated-h {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+.container_img:hover:after {
+  width: 50%;
+}
+
+.container_img:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  a.animated-button.animated-h {
+  .container_img:after {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-a.animated-button.animated-h:before {
+.container_img:before {
+  content: "";
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  left: 0;
+  top: 0;
+  border: 2px solid;
+  z-index: 0;
+  margin: auto;
+  bottom: 0;
+  right: 0;
+}
+
+.container_img .img {
+  opacity: 1;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  margin-bottom: 15px;
+  margin-top: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.container_img .img:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.animated-button {
+  border: none;
+  position: relative;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+.animated-button.animated-h {
+  border: 1px solid;
+  color: #333;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .animated-button.animated-h {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.animated-button.animated-h:before {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   content: "";
@@ -9881,16 +10074,168 @@ a.animated-button.animated-h:before {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  a.animated-button.animated-h:before {
+  .animated-button.animated-h:before {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-a.animated-button.animated-h:hover {
+.animated-button.animated-h:hover {
   color: #fff !important;
 }
 
-a.animated-button.animated-h:hover:before {
+.animated-button.animated-h:hover:before {
   width: 100%;
+}
+
+::-moz-selection {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+::selection {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+.high-content {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+.high-blod {
+  color: #ff5722;
+  font-weight: 600;
+}
+
+*::-webkit-scrollbar {
+  overflow: hidden;
+  width: 15px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
+*::-webkit-scrollbar-piece {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+*::-webkit-scrollbar-thumb {
+  overflow: hidden;
+  border-radius: 0px;
+  background: #ff5722;
+}
+
+*::-webkit-scrollbar-corner {
+  overflow: hidden;
+  background: #333;
+}
+
+*::-moz-scrollbar {
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+*::-moz-scrollbar-button {
+  display: none;
+}
+
+*::-moz-scrollbar-piece {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+*::-moz-scrollbar-thumb {
+  overflow: hidden;
+  border-radius: 0px;
+  background: #333;
+}
+
+*::-moz-scrollbar-corner {
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.line-drawing,
+.illustration {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.line-drawing path {
+  fill: none;
+  stroke: #333;
+  stroke-width: 3;
+}
+
+path.line-round {
+  stroke-linecap: round;
+}
+
+path.stroke-medium {
+  stroke-width: 2;
+}
+
+path.stroke-thin {
+  stroke-width: 1;
+}
+
+.skillbar {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.skillbar-bar {
+  height: 3px;
+  width: 0px;
+  -webkit-transition-property: width, background-color;
+  transition-property: width, background-color;
+}
+
+.skillbar-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.skill-bar-percent {
+  float: right;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* CENTERING ONLY */
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.list {
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.list .skill {
+  background: #333;
+  color: #fff;
+  padding: .2em;
+  display: inline-block;
+  border-radius: 4px;
+  margin: .12em 0;
+}
+
+.list .skill font {
+  vertical-align: inherit;
 }

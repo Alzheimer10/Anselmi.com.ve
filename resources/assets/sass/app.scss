@@ -42,7 +42,14 @@
 
 @import "core/initial";
 
+@import "sections/all";
+@import "sections/contact";
 @import "sections/side";
 @import "sections/navbar";
+@import "sections/projects";
 
 @import "components/button";
+@import "components/highlight";
+@import "components/scrollbar";
+@import "components/svg";
+@import "components/skill";

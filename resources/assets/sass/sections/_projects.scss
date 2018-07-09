@@ -1,5 +1,7 @@
 .container_img{
 	position: relative;
+	overflow: hidden;
+	z-index: 10;
 	&:hover:after{
 	    width: 50%;
 	}
@@ -12,8 +14,8 @@
 	    position: absolute;
 	    top: 0;
 	    left: 0;
-	    z-index: 0;
-	    background: $color-primary;
+	    z-index: 1;
+	    background-color: $color-white;
  		@include transition(all 0.5s ease-in-out);
 	}
 
@@ -24,7 +26,7 @@
 	    height: 95%;
 	    left: 0;
 	    top: 0;
-	    border: 2px solid $color-secondary;
+	    border: 2px solid;
 	    z-index: 0;
 	    margin: auto;
 	    bottom: 0;
@@ -37,7 +39,7 @@
 		margin-bottom: 15px;
 		margin-top: 15px;
 	    position: relative;
-	    z-index: 1;
+	    z-index: 2;
 		&:hover{
 			filter: grayscale(0);
 		}

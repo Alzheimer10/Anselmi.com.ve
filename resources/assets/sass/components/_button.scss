@@ -1,6 +1,11 @@
-a.animated-button{
+.animated-button{
+	border: none;
 	position: relative;
+	background-color: transparent;
+  	border-radius: 0px;
 	&.animated-h{
+		border: 1px solid;
+		color: $color-black;
         @include transition(all .2s ease-in-out);
 		&:before{
         	@include transition(all .2s ease-in-out);

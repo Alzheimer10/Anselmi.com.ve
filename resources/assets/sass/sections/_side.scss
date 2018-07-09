@@ -6,42 +6,6 @@ $side-space: 40px;
     border-right: 1px dashed;
     position: fixed;
     width: $side-space;
-    &:before,
-    &:after{
-      content: "";
-      width: 8px;
-      height: 5px;
-      background-color: $color-black;
-      position: absolute;
-      right: -5px;
-      border-radius: 20px;
-      top: 10%;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-    }
-    &:before{
-      animation-name: example;
-      @keyframes example {
-        from {top: -1%;}
-        to {top: 100%;}
-      }
-    }
-    &:after{
-      animation-name: example2;
-      animation-duration: 4.5s;
-      @keyframes example2 {
-        from {top: -1%;}
-        to {top: 100%;}
-      }
-    }      
-    &:hover::before,
-    &:hover::after{
-      animation-play-state: paused;
-    }
-    &:hover > .side__object::before,
-    &:hover > .side__object::after{
-      animation-play-state: paused;
-    }
     .side__object{
       position: absolute;
       width: 100%;
@@ -52,30 +16,36 @@ $side-space: 40px;
         content: "";
         width: 8px;
         height: 5px;
-        background-color: $color-black;
         position: absolute;
         right: -5px;
         border-radius: 20px;
         top: 10%;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-      }
-      &:before{
-        animation-name: example3;
+        animation-name: movecube;
         animation-duration: 5.5s;
-        @keyframes example3 {
-          from {top: -1%;}
-          to {top: 100%;}
+        animation-iteration-count: infinite;
+        background-color: $color-black;
+        @keyframes movecube{
+          from  { top: -1%; }
+          to    { top: 50%; }
         }
       }
-      &:after{
-        animation-name: example4;
-        animation-duration: 5s;
-        @keyframes example4 {
-          from {top: -1%;}
-          to {top: 100%;}
+      &.inv:after,
+      &.inv:before{
+        animation-name: movecubeInv;
+        @keyframes movecubeInv{
+          from  { top: 100% }
+          to    { top: 50% }
         }
       }
+      &.side__2:before{ animation-duration: 2.5s; }
+      &.side__2:after { animation-duration: 3s; }
+
+      &.side__3:before{ animation-duration: 4s; }
+      &.side__3:after { animation-duration: 4.5s; }
+    }
+    &:hover > .side__object::before,
+    &:hover > .side__object::after{
+      animation-play-state: paused;
     }
     .side__bottom{
       max-width: $side-space;
@@ -88,6 +58,7 @@ $side-space: 40px;
         line-height: 0;
         text-align: center;
         position: relative;
+        color: $color-black;
         @include transition(all .3s ease-in-out);
         
         &::before{

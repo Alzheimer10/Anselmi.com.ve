@@ -1,0 +1,23 @@
+#contact{
+	.section_title{
+    	position: absolute;
+    	top: -2rem;
+    	text-align: center;
+    	width: 100%;
+    	left: 0;
+		& h1{
+    		display: initial;
+    		padding: 0px 11px;
+		}
+	}
+	.form-control:focus,
+	.form-control:active,
+	.form-control:visited,
+	.form-control{
+		background-color: transparent !important;
+		border-radius: 0px;
+		color: $color-black;
+		box-shadow: none;
+		border-color: $color-black;
+	}
+}

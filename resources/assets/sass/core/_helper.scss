@@ -15,3 +15,47 @@
 .border-r-0{
 	border-right: 0 !important;
 }
+
+.bg-app{ background-color: $color-white; }
+.bg-app-inv{ background-color: $color-black; }
+.bg-app::before,
+.bg-app::after{ background-color: $color-white; }
+.bg-after::after,
+.bg-before::before,
+.bg-pseudo::after,
+.bg-pseudo::before{ background-color: $color-black; }
+.line-drawing path { stroke: $color-black !important; }
+.b-app{ border-color: $color-black; }
+.pointer{ cursor: pointer; }
+.color-black{ color: $color-black  !important}
+
+
+body.color,
+body.color .color{
+	background-color: #333 !important;
+	color: #fff !important;
+}
+body.color .color-inv{
+	background-color: #fff !important;
+	color: #333 !important;
+}
+
+body.color .animated-button.animated-h::before{ background: #fff !important; }
+body.color .animated-button.animated-h{ color: #fff !important; border-color: #fff !important; }
+body.color .animated-button.animated-h:hover{ color: #333 !important }
+
+body.color a{ color: #fff !important; }
+body.color a:hover,
+body.color a:active{ color: #fff !important; }
+
+body.color .bg-app{ background-color: $color-black !important; }
+body.color .bg-app-inv{ background-color: $color-white !important; }
+body.color .bg-app::before,
+body.color .bg-app::after{ background-color: $color-black !important; }
+body.color .bg-after::after,
+body.color .bg-before::before,
+body.color .bg-pseudo::after,
+body.color .bg-pseudo::before{ background-color: $color-white !important; }
+body.color .line-drawing path { stroke: $color-white !important; }
+body.color .b-app{ border-color: $color-white !important; }
+body.color .form-control{ color: $color-white !important }

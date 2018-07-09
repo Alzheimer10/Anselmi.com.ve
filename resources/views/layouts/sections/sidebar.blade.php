@@ -1,5 +1,8 @@
 <nav class="side row h-100">
-	<span class="side__object"></span>
+	<span class="side__object side__2 bg-pseudo"></span>
+    <span class="side__object side__2 inv bg-pseudo"></span>
+    <span class="side__object side__3 bg-pseudo"></span>
+	<span class="side__object side__3 inv bg-pseudo"></span>
     <div class="side__bottom">
         <a social="linkedin" href="https://www.linkedin.com/in/carlos-anselmi/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a social="instagram" href="https://www.instagram.com/carlos_anselmi/" target="_blank"><i class="fab fa-instagram"></i></a>

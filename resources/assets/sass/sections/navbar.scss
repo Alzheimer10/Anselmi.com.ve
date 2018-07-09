@@ -27,7 +27,7 @@ button:focus {
 		@include transition(0.3s);
 		@include transition(all 0.3s ease-in-out);
 		background-color: $color-black;
-		width: 44px;
+		width: 30px;
 		height: 2px;
 	}
 	& span {
@@ -42,10 +42,10 @@ button:focus {
 		  left: 0;
 		}
 		&:before {
-		  top: -13.33333333px;
+		  top: -9.33333333px;
 		}
 		&:after {
-		  top: 13.33333333px;
+		  top: 9.33333333px;
 		}
 	}
 	/* Ninja Button */
